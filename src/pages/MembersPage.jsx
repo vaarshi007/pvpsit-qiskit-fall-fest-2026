@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function MembersPage({ onOpenRegister }) {
-  // Leadership & Team Structure with verified official image assets
+  // Leadership & Team Structure with standardized, highly-optimized image assets
   const chiefPatron = {
     name: 'Dr. K. Sivaji Babu',
     role: 'Chief Patron',
@@ -25,12 +25,12 @@ export default function MembersPage({ onOpenRegister }) {
 
   const coOrganizers = [
     { name: 'Prashant A', role: 'Assistant Professor (CSE)', image: '/team/prashant_a.jpg' },
-    { name: 'V. Ratnakumari', role: 'Assistant Professor (ECE)', image: '/team/Ratnakumari.jpg' },
-    { name: 'Dr. Silpa Mandava', role: 'Assistant Professor (FED)', image: '/team/Silpa Mandava.jpg' },
-    { name: 'M. Prameela', role: 'Assistant Professor (FED)', image: '/team/Prameela.jpg' },
-    { name: 'Dr. Raghavendra Ganesh', role: 'Assistant Professor (FED)', image: '/team/Raghavendra Ganesh.jpg' },
-    { name: 'Dr. V. S. N. Malleswari', role: 'Assistant Professor (FED)', image: '/team/Malleswari.jpg' },
-    { name: 'Bhagyavathi Dadi', role: 'Final Year ECE', image: '/team/Bhagyavathi Dadi.png' },
+    { name: 'V. Ratnakumari', role: 'Assistant Professor (ECE)', image: '/team/ratnakumari.jpg' },
+    { name: 'Dr. Silpa Mandava', role: 'Assistant Professor (FED)', image: '/team/silpa_mandava.jpg' },
+    { name: 'M. Prameela', role: 'Assistant Professor (FED)', image: '/team/prameela.jpg' },
+    { name: 'Dr. Raghavendra Ganesh', role: 'Assistant Professor (FED)', image: '/team/raghavendra_ganesh.jpg' },
+    { name: 'Dr. V. S. N. Malleswari', role: 'Assistant Professor (FED)', image: '/team/malleswari.jpg' },
+    { name: 'Bhagyavathi Dadi', role: 'Final Year ECE', image: '/team/bhagyavathi_dadi.jpg' },
   ];
 
   const renderPhotoCard = (member, sizeClasses) => (
@@ -38,6 +38,8 @@ export default function MembersPage({ onOpenRegister }) {
       <img
         src={member.image}
         alt={member.name}
+        loading="eager"
+        fetchpriority="high"
         className="w-full h-full object-cover"
         onError={(e) => {
           e.target.style.display = 'none';
