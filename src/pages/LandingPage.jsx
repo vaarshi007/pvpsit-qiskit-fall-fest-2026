@@ -31,20 +31,35 @@ export default function LandingPage({ setActivePage, onOpenRegister }) {
       <header className="relative pt-12 pb-section-gap px-gutter max-w-container-max mx-auto overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center relative z-10">
           <div className="lg:col-span-7 flex flex-col items-start space-y-8">
+            {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-secondary-container/20 text-on-secondary-container px-4 py-2 rounded-full border border-secondary-container/30">
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              <span className="font-label-caps text-label-caps tracking-wider">PVPSIT Qiskit Fall Fest 2026</span>
+              <span className="font-label-caps text-label-caps tracking-wider">IBM Quantum Community Event</span>
             </div>
 
-            <h1 className="font-headline-xl text-headline-xl md:text-[64px] text-on-surface leading-tight">
-              Explore. Learn. <br />
-              <span className="text-primary relative inline-block">
-                Build the Future.
-                <svg className="absolute -bottom-2 left-0 w-full h-3 text-primary-fixed-dim" fill="none" viewBox="0 0 200 9" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M2 7C49.5 2 110.5 -1.5 198 7" stroke="currentColor" strokeLinecap="round" strokeWidth="3"></path>
-                </svg>
-              </span>
-            </h1>
+            {/* Main Title & Reduced Tagline */}
+            <div className="space-y-4 pt-2">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-extrabold font-headline-xl text-on-surface tracking-tight leading-tight flex flex-wrap items-center gap-3">
+                <span>
+                  PVPSIT <span className="text-primary">x</span> Qiskit Fall Fest 2026
+                </span>
+                <img
+                  src="/quantum-sticker.png"
+                  alt="Quantum Sticker"
+                  className="h-8 sm:h-10 md:h-12 lg:h-14 w-auto object-contain inline-block transform hover:scale-110 transition-transform duration-300 drop-shadow-sm select-none"
+                />
+              </h1>
+
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-headline-lg text-on-surface-variant leading-snug pt-2">
+                Explore. Learn.{' '}
+                <span className="text-primary relative inline-block">
+                  Build the Future.
+                  <svg className="absolute -bottom-1.5 left-0 w-full h-2.5 text-primary-fixed-dim" fill="none" viewBox="0 0 200 9" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 7C49.5 2 110.5 -1.5 198 7" stroke="currentColor" strokeLinecap="round" strokeWidth="3"></path>
+                  </svg>
+                </span>
+              </h2>
+            </div>
 
             <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
               A quantum computing learning and innovation initiative at Prasad V. Potluri Siddhartha Institute of Technology, Vijayawada.
