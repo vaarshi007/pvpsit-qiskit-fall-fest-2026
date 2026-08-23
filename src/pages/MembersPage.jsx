@@ -12,7 +12,7 @@ export default function MembersPage({ onOpenRegister }) {
   const deptHead = {
     name: 'Dr. M. Srilakshmi',
     role: 'Department Head',
-    title: 'Head of Department',
+    title: 'HOD, Freshman Engineering Department',
     image: '/team/srilakshmi.jpg',
   };
 
@@ -24,13 +24,13 @@ export default function MembersPage({ onOpenRegister }) {
   };
 
   const coOrganizers = [
-    { name: 'Prashant A', role: 'Co-Organizer', image: '/team/prashant_a.jpg' },
-    { name: 'V. Ratnakumari', role: 'Co-Organizer', image: '/team/Ratnakumari.jpg' },
-    { name: 'Dr. Silpa Mandava', role: 'Co-Organizer', image: '/team/Silpa Mandava.jpg' },
-    { name: 'M. Prameela', role: 'Co-Organizer', image: '/team/Prameela.jpg' },
-    { name: 'Dr. Raghavendra Ganesh', role: 'Co-Organizer', image: '/team/Raghavendra Ganesh.jpg' },
-    { name: 'Dr. V. S. N. Malleswari', role: 'Co-Organizer', image: '/team/Malleswari.jpg' },
-    { name: 'Bhagyavathi Dadi', role: 'Co-Organizer', image: '/team/Bhagyavathi Dadi.png' },
+    { name: 'Prashant A', role: 'Assistant Professor (CSE)', image: '/team/prashant_a.jpg' },
+    { name: 'V. Ratnakumari', role: 'Assistant Professor (ECE)', image: '/team/Ratnakumari.jpg' },
+    { name: 'Dr. Silpa Mandava', role: 'Assistant Professor (FED)', image: '/team/Silpa Mandava.jpg' },
+    { name: 'M. Prameela', role: 'Assistant Professor (FED)', image: '/team/Prameela.jpg' },
+    { name: 'Dr. Raghavendra Ganesh', role: 'Assistant Professor (FED)', image: '/team/Raghavendra Ganesh.jpg' },
+    { name: 'Dr. V. S. N. Malleswari', role: 'Assistant Professor (FED)', image: '/team/Malleswari.jpg' },
+    { name: 'Bhagyavathi Dadi', role: 'Final Year ECE', image: '/team/Bhagyavathi Dadi.png' },
   ];
 
   const renderPhotoCard = (member, sizeClasses) => (
@@ -142,7 +142,7 @@ export default function MembersPage({ onOpenRegister }) {
           </p>
           <button
             onClick={onOpenRegister}
-            className="bg-primary text-on-primary font-label-caps text-label-caps px-8 py-4 rounded-lg shadow-pulse-pink hover:bg-on-primary-fixed-variant transition-all duration-200 text-lg hover:scale-105 active:scale-110"
+            className="bg-primary text-on-primary font-label-caps text-label-caps px-8 py-4 rounded-lg shadow-pulse-pink hover:bg-on-primary-fixed-variant transition-colors text-lg"
           >
             Register Now
           </button>
