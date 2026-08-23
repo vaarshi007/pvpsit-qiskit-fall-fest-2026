@@ -8,7 +8,7 @@ export default function Footer({ setActivePage, onOpenRegister }) {
         <div className="md:col-span-1 space-y-4">
           <div className="flex items-center gap-3">
             <div className="h-14 w-auto rounded-lg overflow-hidden bg-white p-1 border border-primary/30 shadow-sm flex items-center justify-center">
-              <img src="/pvpsit-logo.png" alt="PVPSIT Logo" className="h-full w-auto object-contain max-h-12" />
+              <img src={`${import.meta.env.BASE_URL}pvpsit-logo.png`} alt="PVPSIT Logo" className="h-full w-auto object-contain max-h-12" />
             </div>
             <span className="font-headline-md text-headline-md text-surface">PVPSIT Qiskit Fall Fest '26</span>
           </div>

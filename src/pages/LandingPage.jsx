@@ -167,7 +167,7 @@ export default function LandingPage({ setActivePage, onOpenRegister }) {
             <div className="relative group p-2">
               <div className="absolute inset-0 bg-primary/20 rounded-full blur-2xl group-hover:blur-3xl transition-all opacity-70 animate-pulse" />
               <img
-                src="/quantum-logo.png"
+                src={`${import.meta.env.BASE_URL}quantum-logo.png`}
                 alt="Quantum State Logo"
                 className="relative w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44 object-contain transform group-hover:scale-105 group-hover:rotate-6 transition-all duration-300 drop-shadow-xl"
               />

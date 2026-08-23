@@ -56,7 +56,7 @@ export default function InteractiveQuantumBanner({ className = '' }) {
         }}
       >
         <img
-          src="/qiskit-badge.png"
+          src={`${import.meta.env.BASE_URL}qiskit-badge.png`}
           alt="Qiskit Fall Fest 2026 Badge"
           className="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
         />
@@ -71,7 +71,7 @@ export default function InteractiveQuantumBanner({ className = '' }) {
         }}
       >
         <img
-          src="/bird1.png"
+          src={`${import.meta.env.BASE_URL}bird1.png`}
           alt="Flying Hummingbird Pink"
           className="w-full h-full object-contain"
         />
@@ -86,7 +86,7 @@ export default function InteractiveQuantumBanner({ className = '' }) {
         }}
       >
         <img
-          src="/bird2.png"
+          src={`${import.meta.env.BASE_URL}bird2.png`}
           alt="Flying Hummingbird Purple"
           className="w-full h-full object-contain"
         />
@@ -101,7 +101,7 @@ export default function InteractiveQuantumBanner({ className = '' }) {
         }}
       >
         <img
-          src="/quantum-pill.png"
+          src={`${import.meta.env.BASE_URL}quantum-pill.png`}
           alt="Quantum Capsule Tag"
           className="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
         />

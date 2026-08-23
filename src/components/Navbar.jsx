@@ -20,7 +20,7 @@ export default function Navbar({ activePage, setActivePage, onOpenRegister }) {
             className="flex items-center gap-3 text-left focus:outline-none group transition-transform duration-200 hover:scale-105 active:scale-108"
           >
             <div className="h-14 w-auto min-w-[44px] rounded-lg overflow-hidden bg-white p-1 border border-primary/20 shadow-sm transition-transform flex items-center justify-center">
-              <img src="/pvpsit-logo.png" alt="PVPSIT Logo" className="h-full w-auto object-contain max-h-12" />
+              <img src={`${import.meta.env.BASE_URL}pvpsit-logo.png`} alt="PVPSIT Logo" className="h-full w-auto object-contain max-h-12" />
             </div>
             <span className="font-headline-md text-headline-md font-bold text-on-surface">
               PVPSIT Qiskit Fall Fest '26
@@ -82,7 +82,7 @@ export default function Navbar({ activePage, setActivePage, onOpenRegister }) {
         <div className="flex items-center justify-between pb-6 mb-6 border-b border-outline-variant/20">
           <div className="flex items-center gap-3">
             <div className="h-12 w-auto rounded-lg overflow-hidden bg-white p-0.5 border border-primary/20 flex items-center justify-center">
-              <img src="/pvpsit-logo.png" alt="PVPSIT Logo" className="h-full w-auto object-contain" />
+              <img src={`${import.meta.env.BASE_URL}pvpsit-logo.png`} alt="PVPSIT Logo" className="h-full w-auto object-contain" />
             </div>
             <div>
               <span className="font-headline-md text-headline-md text-primary font-bold">PVPSIT Qiskit</span>

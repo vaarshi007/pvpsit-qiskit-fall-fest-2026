@@ -6,58 +6,94 @@ export default function MembersPage({ onOpenRegister }) {
     name: 'Dr. K. Sivaji Babu',
     role: 'Chief Patron',
     title: 'Principal, PVPSIT',
-    images: ['/team/sivaji_babu.jpg', '/team/Sivaji Babu.jpg'],
+    images: [
+      `${import.meta.env.BASE_URL}team/sivaji_babu.jpg`,
+      `${import.meta.env.BASE_URL}team/Sivaji Babu.jpg`,
+      `${import.meta.env.BASE_URL}team/sivaji.jpg`,
+    ],
   };
 
   const deptHead = {
     name: 'Dr. M. Srilakshmi',
     role: 'Department Head',
     title: 'HOD, Freshman Engineering Department',
-    images: ['/team/srilakshmi.jpg', '/team/Srilakshmi.jpg', '/team/Dr. M. Srilakshmi.jpg'],
+    images: [
+      `${import.meta.env.BASE_URL}team/srilakshmi.jpg`,
+      `${import.meta.env.BASE_URL}team/Dr. M. Srilakshmi.jpg`,
+    ],
   };
 
   const leadOrganizer = {
     name: 'Dr. Sreedevi Gogula',
     role: 'Lead Organizer',
     title: 'Faculty Lead',
-    images: ['/team/sreedevi.jpg', '/team/Sreedevi.jpg', '/team/Dr. Sreedevi Gogula.jpg'],
+    images: [
+      `${import.meta.env.BASE_URL}team/sreedevi.jpg`,
+      `${import.meta.env.BASE_URL}team/Dr. Sreedevi Gogula.jpg`,
+    ],
   };
 
   const coOrganizers = [
     {
       name: 'Prashant A',
       role: 'Assistant Professor (CSE)',
-      images: ['/team/prashant_a.jpg', '/team/Prashant A.jpg'],
+      images: [
+        `${import.meta.env.BASE_URL}team/prashant_a.jpg`,
+        `${import.meta.env.BASE_URL}team/Prashant A.jpg`,
+        `${import.meta.env.BASE_URL}team/prashant.jpg`,
+      ],
     },
     {
       name: 'V. Ratnakumari',
       role: 'Assistant Professor (ECE)',
-      images: ['/team/ratnakumari.jpg', '/team/Ratnakumari.jpg', '/team/V. Ratnakumari.jpg'],
+      images: [
+        `${import.meta.env.BASE_URL}team/Ratnakumari.jpg`,
+        `${import.meta.env.BASE_URL}team/V. Ratnakumari.jpg`,
+      ],
     },
     {
       name: 'Dr. Silpa Mandava',
       role: 'Assistant Professor (FED)',
-      images: ['/team/silpa_mandava.jpg', '/team/Silpa Mandava.jpg', '/team/Dr. Silpa Mandava.jpg'],
+      images: [
+        `${import.meta.env.BASE_URL}team/silpa_mandava.jpg`,
+        `${import.meta.env.BASE_URL}team/Silpa Mandava.jpg`,
+        `${import.meta.env.BASE_URL}team/Dr. Silpa Mandava.jpg`,
+      ],
     },
     {
       name: 'M. Prameela',
       role: 'Assistant Professor (FED)',
-      images: ['/team/prameela.jpg', '/team/Prameela.jpg', '/team/M. Prameela.jpg'],
+      images: [
+        `${import.meta.env.BASE_URL}team/Prameela.jpg`,
+        `${import.meta.env.BASE_URL}team/M. Prameela.jpg`,
+      ],
     },
     {
       name: 'Dr. Raghavendra Ganesh',
       role: 'Assistant Professor (FED)',
-      images: ['/team/raghavendra_ganesh.jpg', '/team/Raghavendra Ganesh.jpg', '/team/Dr. Raghavendra Ganesh.jpg'],
+      images: [
+        `${import.meta.env.BASE_URL}team/raghavendra_ganesh.jpg`,
+        `${import.meta.env.BASE_URL}team/Raghavendra Ganesh.jpg`,
+        `${import.meta.env.BASE_URL}team/Dr. Raghavendra Ganesh.jpg`,
+      ],
     },
     {
       name: 'Dr. V. S. N. Malleswari',
       role: 'Assistant Professor (FED)',
-      images: ['/team/malleswari.jpg', '/team/Malleswari.jpg', '/team/Dr. V. S. N. Malleswari.jpg'],
+      images: [
+        `${import.meta.env.BASE_URL}team/Malleswari.jpg`,
+        `${import.meta.env.BASE_URL}team/Dr. V. S. N. Malleswari.jpg`,
+      ],
     },
     {
       name: 'Bhagyavathi Dadi',
       role: 'Final Year ECE',
-      images: ['/team/bhagyavathi_dadi.jpg', '/team/Bhagyavathi Dadi.jpg', '/team/Bhagyavathi Dadi.png'],
+      images: [
+        `${import.meta.env.BASE_URL}team/bhagyavathi_dadi.jpg`,
+        `${import.meta.env.BASE_URL}team/Bhagyavathi Dadi.jpg`,
+        `${import.meta.env.BASE_URL}team/bhagyavathi_dadi.png`,
+        `${import.meta.env.BASE_URL}team/Bhagyavathi Dadi.png`,
+      ],
     },
   ];
 
