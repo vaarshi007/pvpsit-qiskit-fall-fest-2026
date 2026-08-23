@@ -24,13 +24,13 @@ export default function AboutPage({ setActivePage, onOpenRegister }) {
           <div className="flex flex-wrap gap-4 pt-4">
             <button
               onClick={onOpenRegister}
-              className="bg-primary text-on-primary font-label-caps text-label-caps px-8 py-4 rounded hover:bg-primary-fixed-variant transition-colors shadow-pulse-pink"
+              className="bg-primary text-on-primary font-label-caps text-label-caps px-8 py-4 rounded hover:bg-primary-fixed-variant transition-all duration-200 shadow-pulse-pink hover:scale-105 active:scale-110"
             >
               Register Now
             </button>
             <button
               onClick={() => setActivePage('schedule')}
-              className="border border-secondary text-secondary font-label-caps text-label-caps px-8 py-4 rounded hover:bg-secondary/5 transition-colors"
+              className="border border-secondary text-secondary font-label-caps text-label-caps px-8 py-4 rounded hover:bg-secondary/5 transition-all duration-200 hover:scale-105 active:scale-110"
             >
               View Schedule
             </button>
@@ -143,7 +143,7 @@ export default function AboutPage({ setActivePage, onOpenRegister }) {
           </p>
           <button
             onClick={onOpenRegister}
-            className="bg-primary text-on-primary font-label-caps text-label-caps px-10 py-5 rounded hover:bg-primary-fixed-variant transition-colors shadow-pulse-pink text-lg"
+            className="bg-primary text-on-primary font-label-caps text-label-caps px-10 py-5 rounded hover:bg-primary-fixed-variant transition-all duration-200 shadow-pulse-pink text-lg hover:scale-105 active:scale-110"
           >
             Register Now
           </button>

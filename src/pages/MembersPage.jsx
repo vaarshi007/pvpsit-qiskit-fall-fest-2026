@@ -142,7 +142,7 @@ export default function MembersPage({ onOpenRegister }) {
           </p>
           <button
             onClick={onOpenRegister}
-            className="bg-primary text-on-primary font-label-caps text-label-caps px-8 py-4 rounded-lg shadow-pulse-pink hover:bg-on-primary-fixed-variant transition-colors text-lg"
+            className="bg-primary text-on-primary font-label-caps text-label-caps px-8 py-4 rounded-lg shadow-pulse-pink hover:bg-on-primary-fixed-variant transition-all duration-200 text-lg hover:scale-105 active:scale-110"
           >
             Register Now
           </button>

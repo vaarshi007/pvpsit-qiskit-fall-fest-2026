@@ -22,22 +22,22 @@ export default function Footer({ setActivePage, onOpenRegister }) {
           <h4 className="font-label-caps text-label-caps text-primary-fixed-dim font-bold uppercase tracking-wider">Navigation</h4>
           <ul className="space-y-2 font-body-md text-sm">
             <li>
-              <button onClick={() => setActivePage('landing')} className="text-tertiary-fixed-dim hover:text-primary-fixed transition-colors opacity-80 hover:opacity-100">
+              <button onClick={() => setActivePage('landing')} className="text-tertiary-fixed-dim hover:text-primary-fixed transition-all duration-200 opacity-80 hover:opacity-100 hover:scale-105 active:scale-110 inline-block">
                 Home / Landing
               </button>
             </li>
             <li>
-              <button onClick={() => setActivePage('about')} className="text-tertiary-fixed-dim hover:text-primary-fixed transition-colors opacity-80 hover:opacity-100">
+              <button onClick={() => setActivePage('about')} className="text-tertiary-fixed-dim hover:text-primary-fixed transition-all duration-200 opacity-80 hover:opacity-100 hover:scale-105 active:scale-110 inline-block">
                 About Event
               </button>
             </li>
             <li>
-              <button onClick={() => setActivePage('schedule')} className="text-tertiary-fixed-dim hover:text-primary-fixed transition-colors opacity-80 hover:opacity-100">
+              <button onClick={() => setActivePage('schedule')} className="text-tertiary-fixed-dim hover:text-primary-fixed transition-all duration-200 opacity-80 hover:opacity-100 hover:scale-105 active:scale-110 inline-block">
                 Event Schedule
               </button>
             </li>
             <li>
-              <button onClick={() => setActivePage('members')} className="text-tertiary-fixed-dim hover:text-primary-fixed transition-colors opacity-80 hover:opacity-100">
+              <button onClick={() => setActivePage('members')} className="text-tertiary-fixed-dim hover:text-primary-fixed transition-all duration-200 opacity-80 hover:opacity-100 hover:scale-105 active:scale-110 inline-block">
                 Organizing Team
               </button>
             </li>
@@ -49,17 +49,17 @@ export default function Footer({ setActivePage, onOpenRegister }) {
           <h4 className="font-label-caps text-label-caps text-primary-fixed-dim font-bold uppercase tracking-wider">Participate</h4>
           <ul className="space-y-2 font-body-md text-sm">
             <li>
-              <button onClick={onOpenRegister} className="text-tertiary-fixed-dim hover:text-primary-fixed transition-colors opacity-80 hover:opacity-100">
+              <button onClick={onOpenRegister} className="text-tertiary-fixed-dim hover:text-primary-fixed transition-all duration-200 opacity-80 hover:opacity-100 hover:scale-105 active:scale-110 inline-block">
                 Register for Event
               </button>
             </li>
             <li>
-              <button onClick={() => setActivePage('schedule')} className="text-tertiary-fixed-dim hover:text-primary-fixed transition-colors opacity-80 hover:opacity-100">
+              <button onClick={() => setActivePage('schedule')} className="text-tertiary-fixed-dim hover:text-primary-fixed transition-all duration-200 opacity-80 hover:opacity-100 hover:scale-105 active:scale-110 inline-block">
                 Hackathon (Oct 28-30)
               </button>
             </li>
             <li>
-              <button onClick={() => setActivePage('about')} className="text-tertiary-fixed-dim hover:text-primary-fixed transition-colors opacity-80 hover:opacity-100">
+              <button onClick={() => setActivePage('about')} className="text-tertiary-fixed-dim hover:text-primary-fixed transition-all duration-200 opacity-80 hover:opacity-100 hover:scale-105 active:scale-110 inline-block">
                 Pre-Fest Workshops
               </button>
             </li>

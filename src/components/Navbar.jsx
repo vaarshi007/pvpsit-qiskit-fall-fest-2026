@@ -17,9 +17,9 @@ export default function Navbar({ activePage, setActivePage, onOpenRegister }) {
           {/* Logo & Brand */}
           <button 
             onClick={() => setActivePage('landing')} 
-            className="flex items-center gap-3 text-left focus:outline-none group"
+            className="flex items-center gap-3 text-left focus:outline-none group transition-transform duration-200 hover:scale-105 active:scale-108"
           >
-            <div className="h-14 w-auto min-w-[44px] rounded-lg overflow-hidden bg-white p-1 border border-primary/20 shadow-sm group-hover:scale-105 transition-transform flex items-center justify-center">
+            <div className="h-14 w-auto min-w-[44px] rounded-lg overflow-hidden bg-white p-1 border border-primary/20 shadow-sm transition-transform flex items-center justify-center">
               <img src="/pvpsit-logo.png" alt="PVPSIT Logo" className="h-full w-auto object-contain max-h-12" />
             </div>
             <span className="font-headline-md text-headline-md font-bold text-on-surface">
@@ -33,7 +33,7 @@ export default function Navbar({ activePage, setActivePage, onOpenRegister }) {
               <button
                 key={link.id}
                 onClick={() => setActivePage(link.id)}
-                className={`relative py-1 transition-colors duration-300 ${
+                className={`relative py-1 transition-all duration-200 inline-block hover:scale-110 active:scale-115 ${
                   activePage === link.id
                     ? 'text-primary border-b-2 border-primary font-bold'
                     : 'text-on-surface-variant hover:text-primary'
@@ -48,13 +48,13 @@ export default function Navbar({ activePage, setActivePage, onOpenRegister }) {
           <div className="flex items-center space-x-4">
             <button
               onClick={onOpenRegister}
-              className="hidden md:inline-flex bg-primary text-on-primary font-label-caps text-label-caps px-6 py-3 rounded-md hover:bg-on-primary-fixed-variant transition-all shadow-pulse-pink active:scale-95"
+              className="hidden md:inline-flex bg-primary text-on-primary font-label-caps text-label-caps px-6 py-3 rounded-md hover:bg-on-primary-fixed-variant transition-all duration-200 shadow-pulse-pink hover:scale-105 active:scale-110"
             >
               Register Now
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden text-on-surface p-2 focus:outline-none"
+              className="md:hidden text-on-surface p-2 focus:outline-none transition-transform duration-200 hover:scale-110 active:scale-120"
               aria-label="Toggle menu"
             >
               <span className="material-symbols-outlined text-3xl">
@@ -91,7 +91,7 @@ export default function Navbar({ activePage, setActivePage, onOpenRegister }) {
           </div>
           <button 
             onClick={() => setMobileMenuOpen(false)}
-            className="text-on-surface-variant hover:text-primary"
+            className="text-on-surface-variant hover:text-primary transition-transform duration-200 hover:scale-110 active:scale-120"
           >
             <span className="material-symbols-outlined">close</span>
           </button>
@@ -112,7 +112,7 @@ export default function Navbar({ activePage, setActivePage, onOpenRegister }) {
                   setActivePage(link.id);
                   setMobileMenuOpen(false);
                 }}
-                className={`flex items-center gap-4 px-4 py-3 rounded-full font-body-md text-base transition-all ${
+                className={`flex items-center gap-4 px-4 py-3 rounded-full font-body-md text-base transition-all duration-200 hover:scale-105 active:scale-110 ${
                   activePage === link.id
                     ? 'bg-primary/10 text-primary font-bold'
                     : 'text-on-surface-variant hover:bg-surface-variant'
@@ -131,7 +131,7 @@ export default function Navbar({ activePage, setActivePage, onOpenRegister }) {
               setMobileMenuOpen(false);
               onOpenRegister();
             }}
-            className="w-full bg-primary text-on-primary font-label-caps text-label-caps py-3 rounded-md shadow-pulse-pink"
+            className="w-full bg-primary text-on-primary font-label-caps text-label-caps py-3 rounded-md shadow-pulse-pink transition-transform duration-200 hover:scale-105 active:scale-110"
           >
             Register Now
           </button>

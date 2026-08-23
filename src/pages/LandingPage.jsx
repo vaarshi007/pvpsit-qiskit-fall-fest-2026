@@ -68,63 +68,99 @@ export default function LandingPage({ setActivePage, onOpenRegister }) {
             <div className="flex flex-col sm:flex-row items-center gap-4 pt-4 w-full sm:w-auto">
               <button
                 onClick={() => setActivePage('journey')}
-                className="w-full sm:w-auto bg-primary text-on-primary font-label-caps text-label-caps px-8 py-4 rounded shadow-pulse-pink hover:bg-on-primary-fixed-variant transition-colors flex items-center justify-center gap-2 group"
+                className="w-full sm:w-auto bg-primary text-on-primary font-label-caps text-label-caps px-8 py-4 rounded shadow-pulse-pink hover:bg-on-primary-fixed-variant transition-all duration-200 flex items-center justify-center gap-2 group hover:scale-105 active:scale-110"
               >
                 Start Your Quantum Journey
                 <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
               </button>
               <button
                 onClick={() => setActivePage('schedule')}
-                className="w-full sm:w-auto bg-transparent border border-secondary text-secondary font-label-caps text-label-caps px-8 py-4 rounded hover:bg-secondary/5 transition-colors flex items-center justify-center gap-2"
+                className="w-full sm:w-auto bg-transparent border border-secondary text-secondary font-label-caps text-label-caps px-8 py-4 rounded hover:bg-secondary/5 transition-all duration-200 flex items-center justify-center gap-2 hover:scale-105 active:scale-110"
               >
                 View Main Event
               </button>
             </div>
-
-            {/* Live Countdown Timer */}
-            <div className="flex flex-col gap-3 mt-8 pt-6 border-t border-outline-variant/20 w-full max-w-md">
-              <div className="flex items-center gap-2 text-primary">
-                <span className="material-symbols-outlined text-base animate-pulse">timer</span>
-                <span className="font-label-caps text-label-caps tracking-widest uppercase">Quantum Countdown</span>
-              </div>
-              <div className="flex flex-col items-center gap-2 font-body-md text-on-surface">
-                <div className="px-3 py-1 bg-secondary-container/10 border border-secondary-container/20 rounded text-xs text-secondary font-label-caps">
-                  PVPSIT Qiskit Fall Fest 2026 Begins In
-                </div>
-                <div className="flex items-center gap-4 py-2">
-                  <div className="flex flex-col items-center">
-                    <span className="text-3xl font-bold text-primary">{String(timeLeft.days).padStart(2, '0')}</span>
-                    <span className="text-[10px] font-label-caps text-tertiary uppercase tracking-tighter">Days</span>
-                  </div>
-                  <div className="text-outline-variant/50 text-xl">|</div>
-                  <div className="flex flex-col items-center">
-                    <span className="text-3xl font-bold text-primary">{String(timeLeft.hours).padStart(2, '0')}</span>
-                    <span className="text-[10px] font-label-caps text-tertiary uppercase tracking-tighter">Hours</span>
-                  </div>
-                  <div className="text-outline-variant/50 text-xl">|</div>
-                  <div className="flex flex-col items-center">
-                    <span className="text-3xl font-bold text-primary">{String(timeLeft.minutes).padStart(2, '0')}</span>
-                    <span className="text-[10px] font-label-caps text-tertiary uppercase tracking-tighter">Minutes</span>
-                  </div>
-                  <div className="text-outline-variant/50 text-xl">|</div>
-                  <div className="flex flex-col items-center">
-                    <span className="text-3xl font-bold text-primary">{String(timeLeft.seconds).padStart(2, '0')}</span>
-                    <span className="text-[10px] font-label-caps text-tertiary uppercase tracking-tighter">Seconds</span>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
 
-          {/* Graphic Element */}
-          <div className="lg:col-span-5 relative h-[450px] w-full mt-12 lg:mt-0">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="relative w-full h-full max-w-md mx-auto aspect-square bg-surface-container-low rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse" />
-              <img
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsKVKFc_2r4Pid8GxdfIm5UsZfCFJTILQnUIJDto59QgXURE9ASEO8MdDK5nHe5O_2Pw9Z_nxxRkzWQYGjbllVZ1cKA9laQIDQwm5zx6sGlE5pin3vkf0eFD9R7QGnqnd0uB3VQ8sI3ZtGRN_ndgxNUeN0veYFLgG-Qs3EoW5ryIjHAYGS1Y8y8chLqNez8fz4uDqve9TZdXeNIAP1YvyIiR3og3O5ZNnbuJq2dOxNGRHFjGNy9xX2vNppuhxmeWNoeg"
-                alt="Quantum orbital representation"
-                className="absolute w-[80%] h-[80%] object-contain opacity-80"
-              />
+          {/* Right Side: Prominent Quantum Countdown Card */}
+          <div className="lg:col-span-5 flex flex-col items-center justify-center mt-10 lg:mt-0 w-full">
+            <div className="w-full max-w-lg bg-surface/90 backdrop-blur-xl border-2 border-primary/30 rounded-2xl p-6 sm:p-8 shadow-2xl shadow-primary/10 relative overflow-hidden group hover:border-primary/60 transition-all duration-300">
+              {/* Subtle background glow */}
+              <div className="absolute -top-16 -right-16 w-48 h-48 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute -bottom-16 -left-16 w-48 h-48 bg-secondary/10 rounded-full blur-3xl pointer-events-none" />
+
+              {/* Countdown Header */}
+              <div className="flex items-center justify-between w-full mb-6 pb-4 border-b border-outline-variant/30 relative z-10">
+                <div className="flex items-center gap-2.5">
+                  <span className="relative flex h-3 w-3">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
+                  </span>
+                  <span className="font-label-caps text-xs font-bold text-primary tracking-widest uppercase">
+                    Quantum Countdown
+                  </span>
+                </div>
+                <span className="text-[11px] font-label-caps bg-secondary-container/30 text-on-secondary-container px-3 py-1 rounded-full font-bold border border-secondary-container/50">
+                  Oct 28–30, 2026
+                </span>
+              </div>
+
+              {/* Countdown Title */}
+              <p className="text-sm font-semibold text-on-surface mb-6 text-center relative z-10">
+                PVPSIT Qiskit Fall Fest 2026 Begins In
+              </p>
+
+              {/* Big 4-Tile Countdown Grid */}
+              <div className="grid grid-cols-4 gap-2.5 sm:gap-3.5 w-full mb-6 relative z-10">
+                {/* Days */}
+                <div className="bg-surface-container-low border border-outline-variant/50 rounded-xl p-3 sm:p-4 flex flex-col items-center justify-center shadow-inner hover:border-primary/50 transition-colors">
+                  <span className="text-3xl sm:text-4xl md:text-5xl font-black text-primary tracking-tight font-headline-xl">
+                    {String(timeLeft.days).padStart(2, '0')}
+                  </span>
+                  <span className="text-[10px] sm:text-xs font-label-caps text-on-surface-variant uppercase tracking-wider mt-1 font-bold">
+                    Days
+                  </span>
+                </div>
+
+                {/* Hours */}
+                <div className="bg-surface-container-low border border-outline-variant/50 rounded-xl p-3 sm:p-4 flex flex-col items-center justify-center shadow-inner hover:border-primary/50 transition-colors">
+                  <span className="text-3xl sm:text-4xl md:text-5xl font-black text-primary tracking-tight font-headline-xl">
+                    {String(timeLeft.hours).padStart(2, '0')}
+                  </span>
+                  <span className="text-[10px] sm:text-xs font-label-caps text-on-surface-variant uppercase tracking-wider mt-1 font-bold">
+                    Hours
+                  </span>
+                </div>
+
+                {/* Minutes */}
+                <div className="bg-surface-container-low border border-outline-variant/50 rounded-xl p-3 sm:p-4 flex flex-col items-center justify-center shadow-inner hover:border-primary/50 transition-colors">
+                  <span className="text-3xl sm:text-4xl md:text-5xl font-black text-primary tracking-tight font-headline-xl">
+                    {String(timeLeft.minutes).padStart(2, '0')}
+                  </span>
+                  <span className="text-[10px] sm:text-xs font-label-caps text-on-surface-variant uppercase tracking-wider mt-1 font-bold">
+                    Mins
+                  </span>
+                </div>
+
+                {/* Seconds */}
+                <div className="bg-surface-container-low border border-outline-variant/50 rounded-xl p-3 sm:p-4 flex flex-col items-center justify-center shadow-inner hover:border-primary/50 transition-colors">
+                  <span className="text-3xl sm:text-4xl md:text-5xl font-black text-primary tracking-tight font-headline-xl animate-pulse">
+                    {String(timeLeft.seconds).padStart(2, '0')}
+                  </span>
+                  <span className="text-[10px] sm:text-xs font-label-caps text-on-surface-variant uppercase tracking-wider mt-1 font-bold">
+                    Secs
+                  </span>
+                </div>
+              </div>
+
+              {/* Action Button inside Card */}
+              <button
+                onClick={onOpenRegister}
+                className="w-full bg-primary text-on-primary font-label-caps text-sm py-3.5 px-6 rounded-xl shadow-pulse-pink hover:bg-on-primary-fixed-variant transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] font-bold flex items-center justify-center gap-2 relative z-10"
+              >
+                <span>Register Now for Fest</span>
+                <span className="material-symbols-outlined text-sm">arrow_forward</span>
+              </button>
             </div>
           </div>
         </div>
@@ -133,6 +169,18 @@ export default function LandingPage({ setActivePage, onOpenRegister }) {
       {/* Quantum Journey Section */}
       <section className="py-section-gap px-gutter bg-surface-container-lowest" id="journey">
         <div className="max-w-container-max mx-auto">
+          {/* Quantum Logo Badge leading into Quantum Journey */}
+          <div className="flex flex-col items-center justify-center mb-6">
+            <div className="relative group p-2">
+              <div className="absolute inset-0 bg-primary/20 rounded-full blur-2xl group-hover:blur-3xl transition-all opacity-70 animate-pulse" />
+              <img
+                src="/quantum-logo.png"
+                alt="Quantum State Logo"
+                className="relative w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44 object-contain transform group-hover:scale-105 group-hover:rotate-6 transition-all duration-300 drop-shadow-xl"
+              />
+            </div>
+          </div>
+
           <div className="text-center mb-16">
             <h2 className="font-headline-lg text-headline-lg text-on-surface mb-4">Your Quantum Journey</h2>
             <p className="font-body-md text-on-surface-variant max-w-2xl mx-auto">
@@ -255,7 +303,7 @@ export default function LandingPage({ setActivePage, onOpenRegister }) {
             </div>
             <button
               onClick={() => setActivePage('schedule')}
-              className="mt-4 md:mt-0 text-primary font-label-caps hover:text-on-primary-fixed-variant transition-colors flex items-center gap-2"
+              className="mt-4 md:mt-0 text-primary font-label-caps hover:text-on-primary-fixed-variant transition-all duration-200 flex items-center gap-2 hover:scale-105 active:scale-110"
             >
               View Full Schedule <span className="material-symbols-outlined text-sm">arrow_forward</span>
             </button>
@@ -269,7 +317,7 @@ export default function LandingPage({ setActivePage, onOpenRegister }) {
               </div>
               <h3 className="font-headline-md text-headline-md text-on-surface mb-3">Quantum Computing 101</h3>
               <p className="font-body-md text-on-surface-variant mb-6 text-sm">From Classical Bits to Quantum Bits.</p>
-              <button onClick={() => setActivePage('schedule')} className="w-full border border-primary text-primary px-4 py-2 rounded font-label-caps hover:bg-primary/5 transition-colors">View Details</button>
+              <button onClick={() => setActivePage('schedule')} className="w-full border border-primary text-primary px-4 py-2 rounded font-label-caps hover:bg-primary/5 transition-all duration-200 hover:scale-105 active:scale-110">View Details</button>
             </div>
 
             {/* Session 2 */}
@@ -279,7 +327,7 @@ export default function LandingPage({ setActivePage, onOpenRegister }) {
               </div>
               <h3 className="font-headline-md text-headline-md text-on-surface mb-3">Understanding Quantum World</h3>
               <p className="font-body-md text-on-surface-variant mb-6 text-sm">Delve into superposition and entanglement.</p>
-              <button onClick={() => setActivePage('schedule')} className="w-full border border-primary text-primary px-4 py-2 rounded font-label-caps hover:bg-primary/5 transition-colors">View Details</button>
+              <button onClick={() => setActivePage('schedule')} className="w-full border border-primary text-primary px-4 py-2 rounded font-label-caps hover:bg-primary/5 transition-all duration-200 hover:scale-105 active:scale-110">View Details</button>
             </div>
 
             {/* Session 3 */}
@@ -289,7 +337,7 @@ export default function LandingPage({ setActivePage, onOpenRegister }) {
               </div>
               <h3 className="font-headline-md text-headline-md text-on-surface mb-3">Quantum Gates & Qiskit Intro</h3>
               <p className="font-body-md text-on-surface-variant mb-6 text-sm">Start building your first circuits.</p>
-              <button onClick={() => setActivePage('schedule')} className="w-full border border-primary text-primary px-4 py-2 rounded font-label-caps hover:bg-primary/5 transition-colors">View Details</button>
+              <button onClick={() => setActivePage('schedule')} className="w-full border border-primary text-primary px-4 py-2 rounded font-label-caps hover:bg-primary/5 transition-all duration-200 hover:scale-105 active:scale-110">View Details</button>
             </div>
 
             {/* Session 4 */}
@@ -299,7 +347,7 @@ export default function LandingPage({ setActivePage, onOpenRegister }) {
               </div>
               <h3 className="font-headline-md text-headline-md text-on-surface mb-3">Qiskit Hands-on Lab</h3>
               <p className="font-body-md text-on-surface-variant mb-6 text-sm">Practical coding session with IBM Quantum.</p>
-              <button onClick={() => setActivePage('schedule')} className="w-full border border-primary text-primary px-4 py-2 rounded font-label-caps hover:bg-primary/5 transition-colors">View Details</button>
+              <button onClick={() => setActivePage('schedule')} className="w-full border border-primary text-primary px-4 py-2 rounded font-label-caps hover:bg-primary/5 transition-all duration-200 hover:scale-105 active:scale-110">View Details</button>
             </div>
 
             {/* Session 5 Featured */}
@@ -310,7 +358,7 @@ export default function LandingPage({ setActivePage, onOpenRegister }) {
               </div>
               <h3 className="font-headline-md text-headline-md text-on-surface mb-3">PVPSIT Pre-Fest Bootcamp</h3>
               <p className="font-body-md text-on-surface-variant mb-6 text-sm">Intensive prep for the main hackathon event.</p>
-              <button onClick={() => setActivePage('schedule')} className="w-full bg-primary text-on-primary px-4 py-2 rounded font-label-caps hover:bg-on-primary-fixed-variant transition-colors">View Details</button>
+              <button onClick={() => setActivePage('schedule')} className="w-full bg-primary text-on-primary px-4 py-2 rounded font-label-caps hover:bg-on-primary-fixed-variant transition-all duration-200 hover:scale-105 active:scale-110">View Details</button>
             </div>
           </div>
         </div>
@@ -374,7 +422,7 @@ export default function LandingPage({ setActivePage, onOpenRegister }) {
           <div className="mt-12 text-center">
             <button
               onClick={onOpenRegister}
-              className="bg-primary text-on-primary font-label-caps text-label-caps px-8 py-4 rounded shadow-pulse-pink hover:bg-on-primary-fixed-variant transition-colors inline-flex items-center justify-center gap-2"
+              className="bg-primary text-on-primary font-label-caps text-label-caps px-8 py-4 rounded shadow-pulse-pink hover:bg-on-primary-fixed-variant transition-all duration-200 inline-flex items-center justify-center gap-2 hover:scale-105 active:scale-110"
             >
               Register For Event
             </button>
