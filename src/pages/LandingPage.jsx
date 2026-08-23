@@ -68,14 +68,14 @@ export default function LandingPage({ setActivePage, onOpenRegister }) {
             <div className="flex flex-col sm:flex-row items-center gap-4 pt-4 w-full sm:w-auto">
               <button
                 onClick={() => setActivePage('journey')}
-                className="w-full sm:w-auto bg-primary text-on-primary font-label-caps text-label-caps px-8 py-4 rounded shadow-pulse-pink hover:bg-on-primary-fixed-variant transition-colors flex items-center justify-center gap-2 group"
+                className="w-full sm:w-auto bg-primary text-on-primary font-label-caps text-label-caps px-8 py-4 rounded shadow-pulse-pink hover:bg-on-primary-fixed-variant transition-all duration-200 flex items-center justify-center gap-2 group hover:scale-105 active:scale-110"
               >
                 Start Your Quantum Journey
                 <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
               </button>
               <button
                 onClick={() => setActivePage('schedule')}
-                className="w-full sm:w-auto bg-transparent border border-secondary text-secondary font-label-caps text-label-caps px-8 py-4 rounded hover:bg-secondary/5 transition-colors flex items-center justify-center gap-2"
+                className="w-full sm:w-auto bg-transparent border border-secondary text-secondary font-label-caps text-label-caps px-8 py-4 rounded hover:bg-secondary/5 transition-all duration-200 flex items-center justify-center gap-2 hover:scale-105 active:scale-110"
               >
                 View Main Event
               </button>
@@ -255,7 +255,7 @@ export default function LandingPage({ setActivePage, onOpenRegister }) {
             </div>
             <button
               onClick={() => setActivePage('schedule')}
-              className="mt-4 md:mt-0 text-primary font-label-caps hover:text-on-primary-fixed-variant transition-colors flex items-center gap-2"
+              className="mt-4 md:mt-0 text-primary font-label-caps hover:text-on-primary-fixed-variant transition-all duration-200 flex items-center gap-2 hover:scale-105 active:scale-110"
             >
               View Full Schedule <span className="material-symbols-outlined text-sm">arrow_forward</span>
             </button>
@@ -269,7 +269,7 @@ export default function LandingPage({ setActivePage, onOpenRegister }) {
               </div>
               <h3 className="font-headline-md text-headline-md text-on-surface mb-3">Quantum Computing 101</h3>
               <p className="font-body-md text-on-surface-variant mb-6 text-sm">From Classical Bits to Quantum Bits.</p>
-              <button onClick={() => setActivePage('schedule')} className="w-full border border-primary text-primary px-4 py-2 rounded font-label-caps hover:bg-primary/5 transition-colors">View Details</button>
+              <button onClick={() => setActivePage('schedule')} className="w-full border border-primary text-primary px-4 py-2 rounded font-label-caps hover:bg-primary/5 transition-all duration-200 hover:scale-105 active:scale-110">View Details</button>
             </div>
 
             {/* Session 2 */}
@@ -279,7 +279,7 @@ export default function LandingPage({ setActivePage, onOpenRegister }) {
               </div>
               <h3 className="font-headline-md text-headline-md text-on-surface mb-3">Understanding Quantum World</h3>
               <p className="font-body-md text-on-surface-variant mb-6 text-sm">Delve into superposition and entanglement.</p>
-              <button onClick={() => setActivePage('schedule')} className="w-full border border-primary text-primary px-4 py-2 rounded font-label-caps hover:bg-primary/5 transition-colors">View Details</button>
+              <button onClick={() => setActivePage('schedule')} className="w-full border border-primary text-primary px-4 py-2 rounded font-label-caps hover:bg-primary/5 transition-all duration-200 hover:scale-105 active:scale-110">View Details</button>
             </div>
 
             {/* Session 3 */}
@@ -289,7 +289,7 @@ export default function LandingPage({ setActivePage, onOpenRegister }) {
               </div>
               <h3 className="font-headline-md text-headline-md text-on-surface mb-3">Quantum Gates & Qiskit Intro</h3>
               <p className="font-body-md text-on-surface-variant mb-6 text-sm">Start building your first circuits.</p>
-              <button onClick={() => setActivePage('schedule')} className="w-full border border-primary text-primary px-4 py-2 rounded font-label-caps hover:bg-primary/5 transition-colors">View Details</button>
+              <button onClick={() => setActivePage('schedule')} className="w-full border border-primary text-primary px-4 py-2 rounded font-label-caps hover:bg-primary/5 transition-all duration-200 hover:scale-105 active:scale-110">View Details</button>
             </div>
 
             {/* Session 4 */}
@@ -299,7 +299,7 @@ export default function LandingPage({ setActivePage, onOpenRegister }) {
               </div>
               <h3 className="font-headline-md text-headline-md text-on-surface mb-3">Qiskit Hands-on Lab</h3>
               <p className="font-body-md text-on-surface-variant mb-6 text-sm">Practical coding session with IBM Quantum.</p>
-              <button onClick={() => setActivePage('schedule')} className="w-full border border-primary text-primary px-4 py-2 rounded font-label-caps hover:bg-primary/5 transition-colors">View Details</button>
+              <button onClick={() => setActivePage('schedule')} className="w-full border border-primary text-primary px-4 py-2 rounded font-label-caps hover:bg-primary/5 transition-all duration-200 hover:scale-105 active:scale-110">View Details</button>
             </div>
 
             {/* Session 5 Featured */}
@@ -310,7 +310,7 @@ export default function LandingPage({ setActivePage, onOpenRegister }) {
               </div>
               <h3 className="font-headline-md text-headline-md text-on-surface mb-3">PVPSIT Pre-Fest Bootcamp</h3>
               <p className="font-body-md text-on-surface-variant mb-6 text-sm">Intensive prep for the main hackathon event.</p>
-              <button onClick={() => setActivePage('schedule')} className="w-full bg-primary text-on-primary px-4 py-2 rounded font-label-caps hover:bg-on-primary-fixed-variant transition-colors">View Details</button>
+              <button onClick={() => setActivePage('schedule')} className="w-full bg-primary text-on-primary px-4 py-2 rounded font-label-caps hover:bg-on-primary-fixed-variant transition-all duration-200 hover:scale-105 active:scale-110">View Details</button>
             </div>
           </div>
         </div>
@@ -374,7 +374,7 @@ export default function LandingPage({ setActivePage, onOpenRegister }) {
           <div className="mt-12 text-center">
             <button
               onClick={onOpenRegister}
-              className="bg-primary text-on-primary font-label-caps text-label-caps px-8 py-4 rounded shadow-pulse-pink hover:bg-on-primary-fixed-variant transition-colors inline-flex items-center justify-center gap-2"
+              className="bg-primary text-on-primary font-label-caps text-label-caps px-8 py-4 rounded shadow-pulse-pink hover:bg-on-primary-fixed-variant transition-all duration-200 inline-flex items-center justify-center gap-2 hover:scale-105 active:scale-110"
             >
               Register For Event
             </button>

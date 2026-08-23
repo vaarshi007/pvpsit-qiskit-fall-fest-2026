@@ -30,7 +30,7 @@ export default function RegisterModal({ isOpen, onClose }) {
       <div className="bg-surface dark:bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-8 max-w-lg w-full shadow-2xl relative animate-fadeIn">
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-on-surface-variant hover:text-primary transition-colors"
+          className="absolute top-4 right-4 text-on-surface-variant hover:text-primary transition-transform duration-200 hover:scale-110 active:scale-120"
         >
           <span className="material-symbols-outlined text-2xl">close</span>
         </button>
@@ -119,7 +119,7 @@ export default function RegisterModal({ isOpen, onClose }) {
 
               <button
                 type="submit"
-                className="w-full mt-6 bg-primary text-on-primary font-label-caps py-4 rounded-md shadow-pulse-pink hover:bg-on-primary-fixed-variant transition-colors flex items-center justify-center gap-2"
+                className="w-full mt-6 bg-primary text-on-primary font-label-caps py-4 rounded-md shadow-pulse-pink hover:bg-on-primary-fixed-variant transition-all duration-200 flex items-center justify-center gap-2 hover:scale-105 active:scale-110"
               >
                 Complete Registration
                 <span className="material-symbols-outlined text-sm">arrow_forward</span>
@@ -142,7 +142,7 @@ export default function RegisterModal({ isOpen, onClose }) {
             </div>
             <button
               onClick={handleReset}
-              className="mt-4 bg-primary text-on-primary font-label-caps px-6 py-3 rounded-md shadow-pulse-pink"
+              className="mt-4 bg-primary text-on-primary font-label-caps px-6 py-3 rounded-md shadow-pulse-pink transition-transform duration-200 hover:scale-105 active:scale-110"
             >
               Done
             </button>

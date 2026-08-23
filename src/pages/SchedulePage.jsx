@@ -136,7 +136,7 @@ export default function SchedulePage({ onOpenRegister }) {
           </p>
           <button
             onClick={onOpenRegister}
-            className="bg-primary text-on-primary font-label-caps text-label-caps px-8 py-4 rounded hover:bg-primary/90 transition-all ambient-shadow inline-flex items-center gap-2"
+            className="bg-primary text-on-primary font-label-caps text-label-caps px-8 py-4 rounded hover:bg-primary/90 transition-all duration-200 ambient-shadow inline-flex items-center gap-2 hover:scale-105 active:scale-110"
           >
             Register Now
             <span className="material-symbols-outlined text-sm">arrow_forward</span>
