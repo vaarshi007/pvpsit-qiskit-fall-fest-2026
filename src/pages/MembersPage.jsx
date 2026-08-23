@@ -1,50 +1,104 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 export default function MembersPage({ onOpenRegister }) {
-  // Leadership & Team Structure with standardized, highly-optimized image assets
+  // Leadership & Team Structure with fallback aliases
   const chiefPatron = {
     name: 'Dr. K. Sivaji Babu',
     role: 'Chief Patron',
     title: 'Principal, PVPSIT',
-    image: '/team/sivaji_babu.jpg',
+    images: ['/team/sivaji_babu.jpg', '/team/Sivaji Babu.jpg'],
   };
 
   const deptHead = {
     name: 'Dr. M. Srilakshmi',
     role: 'Department Head',
     title: 'HOD, Freshman Engineering Department',
-    image: '/team/srilakshmi.jpg',
+    images: ['/team/srilakshmi.jpg', '/team/Srilakshmi.jpg', '/team/Dr. M. Srilakshmi.jpg'],
   };
 
   const leadOrganizer = {
     name: 'Dr. Sreedevi Gogula',
     role: 'Lead Organizer',
     title: 'Faculty Lead',
-    image: '/team/sreedevi.jpg',
+    images: ['/team/sreedevi.jpg', '/team/Sreedevi.jpg', '/team/Dr. Sreedevi Gogula.jpg'],
   };
 
   const coOrganizers = [
-    { name: 'Prashant A', role: 'Assistant Professor (CSE)', image: '/team/prashant_a.jpg' },
-    { name: 'V. Ratnakumari', role: 'Assistant Professor (ECE)', image: '/team/ratnakumari.jpg' },
-    { name: 'Dr. Silpa Mandava', role: 'Assistant Professor (FED)', image: '/team/silpa_mandava.jpg' },
-    { name: 'M. Prameela', role: 'Assistant Professor (FED)', image: '/team/prameela.jpg' },
-    { name: 'Dr. Raghavendra Ganesh', role: 'Assistant Professor (FED)', image: '/team/raghavendra_ganesh.jpg' },
-    { name: 'Dr. V. S. N. Malleswari', role: 'Assistant Professor (FED)', image: '/team/malleswari.jpg' },
-    { name: 'Bhagyavathi Dadi', role: 'Final Year ECE', image: '/team/bhagyavathi_dadi.jpg' },
+    {
+      name: 'Prashant A',
+      role: 'Assistant Professor (CSE)',
+      images: ['/team/prashant_a.jpg', '/team/Prashant A.jpg'],
+    },
+    {
+      name: 'V. Ratnakumari',
+      role: 'Assistant Professor (ECE)',
+      images: ['/team/ratnakumari.jpg', '/team/Ratnakumari.jpg', '/team/V. Ratnakumari.jpg'],
+    },
+    {
+      name: 'Dr. Silpa Mandava',
+      role: 'Assistant Professor (FED)',
+      images: ['/team/silpa_mandava.jpg', '/team/Silpa Mandava.jpg', '/team/Dr. Silpa Mandava.jpg'],
+    },
+    {
+      name: 'M. Prameela',
+      role: 'Assistant Professor (FED)',
+      images: ['/team/prameela.jpg', '/team/Prameela.jpg', '/team/M. Prameela.jpg'],
+    },
+    {
+      name: 'Dr. Raghavendra Ganesh',
+      role: 'Assistant Professor (FED)',
+      images: ['/team/raghavendra_ganesh.jpg', '/team/Raghavendra Ganesh.jpg', '/team/Dr. Raghavendra Ganesh.jpg'],
+    },
+    {
+      name: 'Dr. V. S. N. Malleswari',
+      role: 'Assistant Professor (FED)',
+      images: ['/team/malleswari.jpg', '/team/Malleswari.jpg', '/team/Dr. V. S. N. Malleswari.jpg'],
+    },
+    {
+      name: 'Bhagyavathi Dadi',
+      role: 'Final Year ECE',
+      images: ['/team/bhagyavathi_dadi.jpg', '/team/Bhagyavathi Dadi.jpg', '/team/Bhagyavathi Dadi.png'],
+    },
   ];
+
+  // Preload all team member images into browser cache instantly on mount
+  useEffect(() => {
+    const allImages = [
+      ...chiefPatron.images,
+      ...deptHead.images,
+      ...leadOrganizer.images,
+      ...coOrganizers.flatMap((co) => co.images),
+    ];
+    allImages.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
+
+  const handleImageError = (e, memberImages) => {
+    const currentSrc = e.target.getAttribute('src');
+    const currentIndex = memberImages.indexOf(currentSrc);
+    if (currentIndex !== -1 && currentIndex < memberImages.length - 1) {
+      // Try next fallback image URL
+      e.target.setAttribute('src', memberImages[currentIndex + 1]);
+    } else {
+      // Hide broken image and show person icon fallback
+      e.target.style.display = 'none';
+      if (e.target.nextSibling) {
+        e.target.nextSibling.style.display = 'flex';
+      }
+    }
+  };
 
   const renderPhotoCard = (member, sizeClasses) => (
     <div className={`relative overflow-hidden bg-white shadow-md border-4 border-surface ${sizeClasses} rounded-xl`}>
       <img
-        src={member.image}
+        src={member.images[0]}
         alt={member.name}
         loading="eager"
         fetchpriority="high"
         className="w-full h-full object-cover"
-        onError={(e) => {
-          e.target.style.display = 'none';
-          if (e.target.nextSibling) e.target.nextSibling.style.display = 'flex';
-        }}
+        onError={(e) => handleImageError(e, member.images)}
       />
       <div className="w-full h-full bg-surface-variant flex-col items-center justify-center text-on-surface-variant hidden">
         <span className="material-symbols-outlined text-4xl">person</span>
