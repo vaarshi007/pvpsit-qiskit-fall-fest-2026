@@ -1,9 +1,8 @@
 import React from 'react';
 
 export default function MembersPage({ onOpenRegister }) {
-  // Leadership & Team Structure with permanent image assets
+  // Leadership & Team Structure with verified official image assets
   const chiefPatron = {
-    id: 'sivaji_babu',
     name: 'Dr. K. Sivaji Babu',
     role: 'Chief Patron',
     title: 'Principal, PVPSIT',
@@ -11,7 +10,6 @@ export default function MembersPage({ onOpenRegister }) {
   };
 
   const deptHead = {
-    id: 'srilakshmi',
     name: 'Dr. M. Srilakshmi',
     role: 'Department Head',
     title: 'Head of Department',
@@ -19,7 +17,6 @@ export default function MembersPage({ onOpenRegister }) {
   };
 
   const leadOrganizer = {
-    id: 'sreedevi',
     name: 'Dr. Sreedevi Gogula',
     role: 'Lead Organizer',
     title: 'Faculty Lead',
@@ -27,39 +24,36 @@ export default function MembersPage({ onOpenRegister }) {
   };
 
   const coOrganizers = [
-    { id: 'prashant_a', name: 'Prashant A', role: 'Co-Organizer', image: '/team/prashant_a.jpg' },
-    { id: 'ratnakumari', name: 'V. Ratnakumari', role: 'Co-Organizer', image: '/team/Ratnakumari.jpg' },
-    { id: 'silpa_mandava', name: 'Dr. Silpa Mandava', role: 'Co-Organizer', image: '/team/Silpa Mandava.jpg' },
-    { id: 'prameela', name: 'M. Prameela', role: 'Co-Organizer', image: '/team/Prameela.jpg' },
-    { id: 'raghavendra_ganesh', name: 'Dr. Raghavendra Ganesh', role: 'Co-Organizer', image: '/team/Raghavendra Ganesh.jpg' },
-    { id: 'malleswari', name: 'Dr. V. S. N. Malleswari', role: 'Co-Organizer', image: '/team/Malleswari.jpg' },
-    { id: 'bhagyavathi_dadi', name: 'Bhagyavathi Dadi', role: 'Co-Organizer', image: '/team/Bhagyavathi Dadi.png' },
+    { name: 'Prashant A', role: 'Co-Organizer', image: '/team/prashant_a.jpg' },
+    { name: 'V. Ratnakumari', role: 'Co-Organizer', image: '/team/Ratnakumari.jpg' },
+    { name: 'Dr. Silpa Mandava', role: 'Co-Organizer', image: '/team/Silpa Mandava.jpg' },
+    { name: 'M. Prameela', role: 'Co-Organizer', image: '/team/Prameela.jpg' },
+    { name: 'Dr. Raghavendra Ganesh', role: 'Co-Organizer', image: '/team/Raghavendra Ganesh.jpg' },
+    { name: 'Dr. V. S. N. Malleswari', role: 'Co-Organizer', image: '/team/Malleswari.jpg' },
+    { name: 'Bhagyavathi Dadi', role: 'Co-Organizer', image: '/team/Bhagyavathi Dadi.png' },
   ];
 
-  const renderPhotoContainer = (member, sizeClasses) => {
-    return (
-      <div className={`overflow-hidden bg-white shadow-md border-4 border-surface ${sizeClasses} rounded-xl`}>
-        <img
-          src={member.image}
-          alt={member.name}
-          className="w-full h-full object-cover"
-          onError={(e) => {
-            e.target.style.display = 'none';
-            if (e.target.nextSibling) e.target.nextSibling.style.display = 'flex';
-          }}
-        />
-        {/* Fallback Icon if Image fails */}
-        <div className="w-full h-full bg-surface-variant flex items-center justify-center text-on-surface-variant hidden">
-          <span className="material-symbols-outlined text-4xl">person</span>
-        </div>
+  const renderPhotoCard = (member, sizeClasses) => (
+    <div className={`relative overflow-hidden bg-white shadow-md border-4 border-surface ${sizeClasses} rounded-xl`}>
+      <img
+        src={member.image}
+        alt={member.name}
+        className="w-full h-full object-cover"
+        onError={(e) => {
+          e.target.style.display = 'none';
+          if (e.target.nextSibling) e.target.nextSibling.style.display = 'flex';
+        }}
+      />
+      <div className="w-full h-full bg-surface-variant flex-col items-center justify-center text-on-surface-variant hidden">
+        <span className="material-symbols-outlined text-4xl">person</span>
       </div>
-    );
-  };
+    </div>
+  );
 
   return (
     <div className="w-full flex-1">
       {/* Hero Section */}
-      <section className="max-w-container-max mx-auto px-gutter pt-16 pb-8 text-center">
+      <section className="max-w-container-max mx-auto px-gutter pt-16 pb-12 text-center">
         <div className="inline-flex items-center gap-2 bg-secondary-fixed/50 px-4 py-1.5 rounded-full mb-6 border border-secondary/20">
           <span className="w-2 h-2 rounded-full bg-primary" />
           <span className="font-label-caps text-label-caps text-primary tracking-wider">THE TEAM</span>
@@ -93,8 +87,8 @@ export default function MembersPage({ onOpenRegister }) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {/* Chief Patron */}
           <div className="bg-[#F8F9FF] border border-outline-variant/30 rounded-xl p-8 flex flex-col items-center text-center hover:border-primary/50 transition-colors group">
-            {renderPhotoContainer(chiefPatron, 'w-36 h-36')}
-            <div className="bg-primary/10 text-primary font-label-caps text-xs px-4 py-1 rounded-full mb-3 mt-4 font-bold">
+            {renderPhotoCard(chiefPatron, 'w-36 h-36')}
+            <div className="bg-primary/10 text-primary font-label-caps text-xs px-4 py-1 rounded-full mb-3 mt-6 font-bold">
               {chiefPatron.role}
             </div>
             <h3 className="font-headline-md text-headline-md text-on-surface mb-1 font-bold">{chiefPatron.name}</h3>
@@ -103,8 +97,8 @@ export default function MembersPage({ onOpenRegister }) {
 
           {/* Department Head */}
           <div className="bg-[#F8F9FF] border border-outline-variant/30 rounded-xl p-8 flex flex-col items-center text-center hover:border-secondary/50 transition-colors group">
-            {renderPhotoContainer(deptHead, 'w-36 h-36')}
-            <div className="bg-secondary/10 text-secondary font-label-caps text-xs px-4 py-1 rounded-full mb-3 mt-4 font-bold">
+            {renderPhotoCard(deptHead, 'w-36 h-36')}
+            <div className="bg-secondary/10 text-secondary font-label-caps text-xs px-4 py-1 rounded-full mb-3 mt-6 font-bold">
               {deptHead.role}
             </div>
             <h3 className="font-headline-md text-headline-md text-on-surface mb-1 font-bold">{deptHead.name}</h3>
@@ -115,8 +109,8 @@ export default function MembersPage({ onOpenRegister }) {
         {/* Lead Organizer */}
         <div className="flex justify-center mb-16">
           <div className="bg-[#F8F9FF] border border-outline-variant/30 rounded-xl p-8 flex flex-col items-center text-center hover:border-primary/50 transition-colors group w-full max-w-md shadow-sm">
-            {renderPhotoContainer(leadOrganizer, 'w-32 h-32')}
-            <div className="bg-primary-container/20 text-on-primary-container font-label-caps text-xs px-4 py-1 rounded-full mb-3 mt-4 font-bold">
+            {renderPhotoCard(leadOrganizer, 'w-32 h-32')}
+            <div className="bg-primary-container/20 text-on-primary-container font-label-caps text-xs px-4 py-1 rounded-full mb-3 mt-6 font-bold">
               {leadOrganizer.role}
             </div>
             <h3 className="font-headline-md text-headline-md text-on-surface mb-1 font-bold">{leadOrganizer.name}</h3>
@@ -128,9 +122,9 @@ export default function MembersPage({ onOpenRegister }) {
         <div className="mb-8">
           <h2 className="font-headline-lg text-headline-lg text-center text-on-surface mb-12">Co-Organizers</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {coOrganizers.map((coOrg) => (
-              <div key={coOrg.id} className="bg-[#F8F9FF] border border-outline-variant/30 rounded-xl p-6 flex flex-col items-center text-center hover:border-primary/30 transition-colors group">
-                {renderPhotoContainer(coOrg, 'w-24 h-24')}
+            {coOrganizers.map((coOrg, idx) => (
+              <div key={idx} className="bg-[#F8F9FF] border border-outline-variant/30 rounded-xl p-6 flex flex-col items-center text-center hover:border-primary/30 transition-colors group">
+                {renderPhotoCard(coOrg, 'w-28 h-28')}
                 <h4 className="font-body-lg text-base font-bold text-on-surface mb-1 mt-4">{coOrg.name}</h4>
                 <p className="font-label-caps text-xs text-on-surface-variant">{coOrg.role}</p>
               </div>
