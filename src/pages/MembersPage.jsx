@@ -53,13 +53,13 @@ export default function MembersPage({ onOpenRegister }) {
   };
 
   const coOrganizers = [
-    { id: 'prashant_a', name: 'Prashant A', role: 'Co-Organizer' },
-    { id: 'ratnakumari', name: 'V. Ratnakumari', role: 'Co-Organizer' },
-    { id: 'silpa_mandava', name: 'Dr. Silpa Mandava', role: 'Co-Organizer' },
-    { id: 'prameela', name: 'M. Prameela', role: 'Co-Organizer' },
-    { id: 'raghavendra_ganesh', name: 'Dr. Raghavendra Ganesh', role: 'Co-Organizer' },
-    { id: 'malleswari', name: 'Dr. V. S. N. Malleswari', role: 'Co-Organizer' },
-    { id: 'bhagyavathi_dadi', name: 'Bhagyavathi Dadi', role: 'Co-Organizer' },
+    { id: 'prashant_a', name: 'Prashant A', role: 'Co-Organizer', defaultImage: '/team/prashant_a.jpg' },
+    { id: 'ratnakumari', name: 'V. Ratnakumari', role: 'Co-Organizer', defaultImage: '/team/Ratnakumari.jpg' },
+    { id: 'silpa_mandava', name: 'Dr. Silpa Mandava', role: 'Co-Organizer', defaultImage: '/team/Silpa Mandava.jpg' },
+    { id: 'prameela', name: 'M. Prameela', role: 'Co-Organizer', defaultImage: '/team/Prameela.jpg' },
+    { id: 'raghavendra_ganesh', name: 'Dr. Raghavendra Ganesh', role: 'Co-Organizer', defaultImage: '/team/Raghavendra Ganesh.jpg' },
+    { id: 'malleswari', name: 'Dr. V. S. N. Malleswari', role: 'Co-Organizer', defaultImage: '/team/Malleswari.jpg' },
+    { id: 'bhagyavathi_dadi', name: 'Bhagyavathi Dadi', role: 'Co-Organizer', defaultImage: '/team/Bhagyavathi Dadi.png' },
   ];
 
   const renderPhotoContainer = (member, sizeClasses, isCircle = false) => {
