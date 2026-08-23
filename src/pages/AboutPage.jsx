@@ -1,4 +1,5 @@
 import React from 'react';
+import InteractiveQuantumBanner from '../components/InteractiveQuantumBanner';
 
 export default function AboutPage({ setActivePage, onOpenRegister }) {
   return (
@@ -37,12 +38,9 @@ export default function AboutPage({ setActivePage, onOpenRegister }) {
           </div>
         </div>
 
-        <div className="relative w-full h-[450px] rounded-xl overflow-hidden border border-outline-variant/30 bg-surface-container flex items-center justify-center p-8">
-          <img
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8a_dEp2QpQuMUdR82QmzNygLeoeKUrX5bNqG5mccrDtqmEQ_KymfKguBUkEDD7fVa6cD7-xfjDhVYerxRDdhccX-fqlnYFlykH1P9oRHzyPl-3XKyXGAzH7-2B12TqBf5QfHtev-HB24zNqABe5fCCNpu9gvLeUNnlVIc65_bRu2G0WC1SfrAJp4lH4S3--8a6Msl3NK3BavB7a4OVAWcUZ6Pq5kvf836YTmK5fUh3y3DzM3kCAe4oQ"
-            alt="Quantum Computing Abstract Graphic"
-            className="w-full h-full object-cover rounded-lg shadow-inner"
-          />
+        {/* Interactive Animated Quantum Banner */}
+        <div className="w-full flex items-center justify-center">
+          <InteractiveQuantumBanner />
         </div>
       </section>
 
