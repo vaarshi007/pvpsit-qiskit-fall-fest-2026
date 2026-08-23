@@ -37,16 +37,16 @@ export default function LandingPage({ setActivePage, onOpenRegister }) {
               <span className="font-label-caps text-label-caps tracking-wider">IBM Quantum Community Event</span>
             </div>
 
-            {/* Main Title & Reduced Tagline */}
+            {/* Main Title & Tagline */}
             <div className="space-y-4 pt-2">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-extrabold font-headline-xl text-on-surface tracking-tight leading-tight flex flex-wrap items-center gap-3">
-                <span>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-extrabold font-headline-xl text-on-surface tracking-tight leading-none flex flex-wrap items-center gap-3">
+                <span className="inline-flex items-center gap-2">
                   PVPSIT <span className="text-primary">x</span> Qiskit Fall Fest 2026
                 </span>
                 <img
                   src="/quantum-sticker.png"
                   alt="Quantum Sticker"
-                  className="h-8 sm:h-10 md:h-12 lg:h-14 w-auto object-contain inline-block transform hover:scale-110 transition-transform duration-300 drop-shadow-sm select-none"
+                  className="h-9 sm:h-11 md:h-12 lg:h-14 w-auto object-contain inline-block align-middle drop-shadow-sm select-none"
                 />
               </h1>
 

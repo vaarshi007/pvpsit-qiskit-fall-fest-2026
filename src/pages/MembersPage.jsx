@@ -1,39 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 export default function MembersPage({ onOpenRegister }) {
-  // Saved custom photos in browser storage
-  const [customPhotos, setCustomPhotos] = useState({});
-
-  useEffect(() => {
-    const saved = localStorage.getItem('pvpsit_team_photos');
-    if (saved) {
-      try {
-        setCustomPhotos(JSON.parse(saved));
-      } catch (e) {
-        console.error(e);
-      }
-    }
-  }, []);
-
-  const handlePhotoUpload = (memberId, file) => {
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      const dataUrl = e.target.result;
-      const updated = { ...customPhotos, [memberId]: dataUrl };
-      setCustomPhotos(updated);
-      localStorage.setItem('pvpsit_team_photos', JSON.stringify(updated));
-    };
-    reader.readAsDataURL(file);
-  };
-
-  // Leadership & Team Structure
+  // Leadership & Team Structure with verified local image assets
   const chiefPatron = {
     id: 'sivaji_babu',
     name: 'Dr. K. Sivaji Babu',
     role: 'Chief Patron',
     title: 'Principal, PVPSIT',
-    defaultImage: '/team/sivaji_babu.jpg',
+    image: '/team/sivaji_babu.jpg',
   };
 
   const deptHead = {
@@ -41,7 +15,7 @@ export default function MembersPage({ onOpenRegister }) {
     name: 'Dr. M. Srilakshmi',
     role: 'Department Head',
     title: 'Head of Department',
-    defaultImage: '/team/srilakshmi.jpg',
+    image: '/team/srilakshmi.jpg',
   };
 
   const leadOrganizer = {
@@ -49,26 +23,24 @@ export default function MembersPage({ onOpenRegister }) {
     name: 'Dr. Sreedevi Gogula',
     role: 'Lead Organizer',
     title: 'Faculty Lead',
-    defaultImage: '/team/sreedevi.jpg',
+    image: '/team/sreedevi.jpg',
   };
 
   const coOrganizers = [
-    { id: 'prashant_a', name: 'Prashant A', role: 'Co-Organizer', defaultImage: '/team/prashant_a.jpg' },
-    { id: 'ratnakumari', name: 'V. Ratnakumari', role: 'Co-Organizer', defaultImage: '/team/Ratnakumari.jpg' },
-    { id: 'silpa_mandava', name: 'Dr. Silpa Mandava', role: 'Co-Organizer', defaultImage: '/team/Silpa Mandava.jpg' },
-    { id: 'prameela', name: 'M. Prameela', role: 'Co-Organizer', defaultImage: '/team/Prameela.jpg' },
-    { id: 'raghavendra_ganesh', name: 'Dr. Raghavendra Ganesh', role: 'Co-Organizer', defaultImage: '/team/Raghavendra Ganesh.jpg' },
-    { id: 'malleswari', name: 'Dr. V. S. N. Malleswari', role: 'Co-Organizer', defaultImage: '/team/Malleswari.jpg' },
-    { id: 'bhagyavathi_dadi', name: 'Bhagyavathi Dadi', role: 'Co-Organizer', defaultImage: '/team/Bhagyavathi Dadi.png' },
+    { id: 'prashant_a', name: 'Prashant A', role: 'Co-Organizer', image: '/team/prashant_a.jpg' },
+    { id: 'ratnakumari', name: 'V. Ratnakumari', role: 'Co-Organizer', image: '/team/Ratnakumari.jpg' },
+    { id: 'silpa_mandava', name: 'Dr. Silpa Mandava', role: 'Co-Organizer', image: '/team/Silpa Mandava.jpg' },
+    { id: 'prameela', name: 'M. Prameela', role: 'Co-Organizer', image: '/team/Prameela.jpg' },
+    { id: 'raghavendra_ganesh', name: 'Dr. Raghavendra Ganesh', role: 'Co-Organizer', image: '/team/Raghavendra Ganesh.jpg' },
+    { id: 'malleswari', name: 'Dr. V. S. N. Malleswari', role: 'Co-Organizer', image: '/team/Malleswari.jpg' },
+    { id: 'bhagyavathi_dadi', name: 'Bhagyavathi Dadi', role: 'Co-Organizer', image: '/team/Bhagyavathi Dadi.png' },
   ];
 
-  const renderPhotoContainer = (member, sizeClasses, isCircle = false) => {
-    const photoUrl = customPhotos[member.id] || member.defaultImage || `/team/${member.id}.jpg`;
-
+  const renderPhotoContainer = (member, sizeClasses) => {
     return (
-      <div className={`relative group/photo overflow-hidden bg-white shadow-md border-4 border-surface ${sizeClasses} ${isCircle ? 'rounded-full' : 'rounded-xl'}`}>
+      <div className={`relative overflow-hidden bg-white shadow-md border-4 border-surface rounded-xl ${sizeClasses}`}>
         <img
-          src={photoUrl}
+          src={member.image}
           alt={member.name}
           className="w-full h-full object-cover"
           onError={(e) => {
@@ -78,21 +50,9 @@ export default function MembersPage({ onOpenRegister }) {
         />
 
         {/* Fallback Icon if Image fails */}
-        <div className="w-full h-full bg-surface-variant flex-col items-center justify-center text-on-surface-variant hidden">
+        <div className="w-full h-full bg-surface-variant flex items-center justify-center text-on-surface-variant hidden">
           <span className="material-symbols-outlined text-4xl">person</span>
         </div>
-
-        {/* Interactive Hover Overlay to Upload / Change Photo */}
-        <label className="absolute inset-0 bg-on-surface/60 backdrop-blur-xs flex flex-col items-center justify-center opacity-0 group-hover/photo:opacity-100 transition-opacity cursor-pointer text-white text-xs font-label-caps p-2 text-center">
-          <span className="material-symbols-outlined text-2xl mb-1">photo_camera</span>
-          <span>Click to Upload Photo</span>
-          <input
-            type="file"
-            accept="image/*"
-            className="hidden"
-            onChange={(e) => handlePhotoUpload(member.id, e.target.files[0])}
-          />
-        </label>
       </div>
     );
   };
@@ -111,17 +71,6 @@ export default function MembersPage({ onOpenRegister }) {
         <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
           Meet the faculty and organizers bringing PVPSIT Qiskit Fall Fest 2026 to life.
         </p>
-
-        {/* Interactive Photo Uploader Banner */}
-        <div className="mt-8 max-w-xl mx-auto bg-primary/10 border border-primary/30 rounded-xl p-4 text-xs font-label-caps text-primary flex items-center justify-between gap-4 shadow-sm">
-          <div className="flex items-center gap-3 text-left">
-            <span className="material-symbols-outlined text-2xl">add_a_photo</span>
-            <div>
-              <strong className="block text-sm">Interactive Photo Editor Enabled!</strong>
-              <span className="text-on-surface-variant font-normal">Hover over any team card below to upload or change member photos directly on the page.</span>
-            </div>
-          </div>
-        </div>
       </section>
 
       {/* Decorative Divider */}
@@ -145,7 +94,7 @@ export default function MembersPage({ onOpenRegister }) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {/* Chief Patron */}
           <div className="bg-[#F8F9FF] border border-outline-variant/30 rounded-xl p-8 flex flex-col items-center text-center hover:border-primary/50 transition-colors group">
-            {renderPhotoContainer(chiefPatron, 'w-36 h-36', false)}
+            {renderPhotoContainer(chiefPatron, 'w-36 h-36')}
             <div className="bg-primary/10 text-primary font-label-caps text-xs px-4 py-1 rounded-full mb-3 mt-4 font-bold">
               {chiefPatron.role}
             </div>
@@ -155,7 +104,7 @@ export default function MembersPage({ onOpenRegister }) {
 
           {/* Department Head */}
           <div className="bg-[#F8F9FF] border border-outline-variant/30 rounded-xl p-8 flex flex-col items-center text-center hover:border-secondary/50 transition-colors group">
-            {renderPhotoContainer(deptHead, 'w-36 h-36', false)}
+            {renderPhotoContainer(deptHead, 'w-36 h-36')}
             <div className="bg-secondary/10 text-secondary font-label-caps text-xs px-4 py-1 rounded-full mb-3 mt-4 font-bold">
               {deptHead.role}
             </div>
@@ -167,7 +116,7 @@ export default function MembersPage({ onOpenRegister }) {
         {/* Lead Organizer */}
         <div className="flex justify-center mb-16">
           <div className="bg-[#F8F9FF] border border-outline-variant/30 rounded-xl p-8 flex flex-col items-center text-center hover:border-primary/50 transition-colors group w-full max-w-md shadow-sm">
-            {renderPhotoContainer(leadOrganizer, 'w-32 h-32', false)}
+            {renderPhotoContainer(leadOrganizer, 'w-32 h-32')}
             <div className="bg-primary-container/20 text-on-primary-container font-label-caps text-xs px-4 py-1 rounded-full mb-3 mt-4 font-bold">
               {leadOrganizer.role}
             </div>
@@ -182,7 +131,7 @@ export default function MembersPage({ onOpenRegister }) {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {coOrganizers.map((coOrg) => (
               <div key={coOrg.id} className="bg-[#F8F9FF] border border-outline-variant/30 rounded-xl p-6 flex flex-col items-center text-center hover:border-primary/30 transition-colors group">
-                {renderPhotoContainer(coOrg, 'w-24 h-24', false)}
+                {renderPhotoContainer(coOrg, 'w-24 h-24')}
                 <h4 className="font-body-lg text-base font-bold text-on-surface mb-1 mt-4">{coOrg.name}</h4>
                 <p className="font-label-caps text-xs text-on-surface-variant">{coOrg.role}</p>
               </div>
