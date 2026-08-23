@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function MembersPage({ onOpenRegister }) {
-  // Leadership & Team Structure with verified local image assets
+  // Leadership & Team Structure with permanent image assets
   const chiefPatron = {
     id: 'sivaji_babu',
     name: 'Dr. K. Sivaji Babu',
@@ -38,7 +38,7 @@ export default function MembersPage({ onOpenRegister }) {
 
   const renderPhotoContainer = (member, sizeClasses) => {
     return (
-      <div className={`relative overflow-hidden bg-white shadow-md border-4 border-surface rounded-xl ${sizeClasses}`}>
+      <div className={`overflow-hidden bg-white shadow-md border-4 border-surface ${sizeClasses} rounded-xl`}>
         <img
           src={member.image}
           alt={member.name}
@@ -48,7 +48,6 @@ export default function MembersPage({ onOpenRegister }) {
             if (e.target.nextSibling) e.target.nextSibling.style.display = 'flex';
           }}
         />
-
         {/* Fallback Icon if Image fails */}
         <div className="w-full h-full bg-surface-variant flex items-center justify-center text-on-surface-variant hidden">
           <span className="material-symbols-outlined text-4xl">person</span>
